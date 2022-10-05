@@ -40,6 +40,11 @@ class Chronometer {
   }
 
   split() {
+    let splitSeconds = this.getSeconds(this.currentTime);
+    let addedZeroInSeconds = this.computeTwoDigitNumber(splitSeconds);
+    let splitMinutes = this.getMinutes(this.currentTime);
+    let addedZeroInMinutes = this.computeTwoDigitNumber(splitMinutes);
+    return `${addedZeroInMinutes}:${addedZeroInSeconds}`
     
 }
 }
