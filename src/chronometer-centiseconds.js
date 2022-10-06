@@ -20,7 +20,7 @@ class Chronometer {
 
   getSeconds() {
     let seconds = this.currentTime/100;
-    return seconds % 60;
+    return Math.floor(seconds % 60);
   }
 
   getCentiseconds() {
@@ -44,12 +44,12 @@ class Chronometer {
   }
 
   split() {
-    // let splitSeconds = this.getSeconds(this.currentTime);
-    // let addedZeroInSeconds = this.computeTwoDigitNumber(splitSeconds);
-    // let splitMinutes = this.getMinutes(this.currentTime);
-    // let addedZeroInMinutes = this.computeTwoDigitNumber(splitMinutes);
-    // let splitCentiseconds = this.getCentiseconds(this.currentTime);
-    // let addedZeroInCentiseconds = this.computeTwoDigitNumber(splitCentiseconds);
-    // return `${addedZeroInMinutes}:${addedZeroInSeconds}:${addedZeroInCentiseconds}`
+    let splitSeconds = this.getSeconds(this.currentTime);
+    let addedZeroInSeconds = this.computeTwoDigitNumber(splitSeconds);
+    let splitMinutes = this.getMinutes(this.currentTime);
+    let addedZeroInMinutes = this.computeTwoDigitNumber(splitMinutes);
+    let splitCentiseconds = this.getCentiseconds(this.currentTime);
+    let addedZeroInCentiseconds = this.computeTwoDigitNumber(splitCentiseconds);
+    return `${addedZeroInMinutes}:${addedZeroInSeconds}.${addedZeroInCentiseconds}`
   }
 }
